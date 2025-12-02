@@ -19,6 +19,7 @@ class Motor:
                  [0,0,1,0],
                  [0,0,1,1],
                  [0,0,0,1]]
+
     def __init__(self):
         GPIO.setmode(GPIO.BCM)
         # setting up
@@ -32,7 +33,8 @@ class Motor:
         GPIO.output( self.in3, GPIO.LOW )
         GPIO.output( self.in4, GPIO.LOW )
         self.motor_pins = [self.in1,self.in2,self.in3,self.in4]
-        self.motor_step_counter = 0;
+        self.motor_step_counter = 0
+
     def rotate(self):
         for i in range(int(self.rotation_deg)):
             for pin in range(0, len(self.motor_pins)):
@@ -59,14 +61,4 @@ class Motor:
                 print( "uh oh... direction should *always* be either True or False" )
                 #cleanup()
                 exit( 1 )
-            time.sleep( self.step_sleep )
-            
-# def main():
-#     motor=Motor()
-#     #motor.set_direction(True) #motor.direction=True
-#     #motor.set_angle(2048) #motor.
-#     motor.rotate(False,2048 )
-
-
-#main()
-
+            time.sleep(self.step_sleep)

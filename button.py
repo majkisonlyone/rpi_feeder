@@ -13,6 +13,6 @@ class Button:
     
     def check_input(self):
         if (not GPIO.input(26)):
-            self.is_activated=not self.is_activated
+            self.is_activated = not self.is_activated
             time.sleep(2)
         

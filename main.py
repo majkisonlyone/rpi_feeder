@@ -12,11 +12,7 @@ def main():
     sensor=Sensor()
     button=Button()
     display=Display()
-    #print(sensor.get_input())
-    #GPIO.setup(12,GPIO.IN)
-    #motor.rotate(False,2048)
-    
-    
+
     while True:
         display.print_state(button.get_state(), sensor.get_input())
         button.check_input()
@@ -28,7 +24,6 @@ def main():
             time.sleep(2)
             motor.rotate(True,800)
 
-    
 try:     
     main()
 except KeyboardInterrupt:
